@@ -54,13 +54,13 @@ def inform_super(id, qstate, superqstate, qdata): return True
 
 def operate(id, event, qstate, qdata):
     # when a dns query arrive
-        if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS): 
-            rl = qstate.mesh_info.reply_list
-            raise Exception(str(list(rl)))
-        #if ip from query is not in table, pass the query to validator  
-        #pass the query to validator
-        qstate.ext_state[id] = MODULE_WAIT_MODULE  
-        return True
+    if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS): 
+        rl = qstate.mesh_info.reply_list
+        raise Exception(str(list(rl)))
+    #if ip from query is not in table, pass the query to validator  
+    #pass the query to validator
+    qstate.ext_state[id] = MODULE_WAIT_MODULE  
+    return True
 
     if event == MODULE_EVENT_MODDONE:
         log_info("pythonmod: iterator module done")
