@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Configuration interface &#8212; Unbound scriptable interface 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Scriptable functions" href="functions.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Scriptable functions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Unbound scriptable interface 1.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Unbound module documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Configuration interface</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="configuration-interface">
+<h1>Configuration interface<a class="headerlink" href="#configuration-interface" title="Permalink to this headline">¶</a></h1>
+<p>Currently passed to Python module in init(module_id, cfg).</p>
+<section id="config-file">
+<h2>config_file<a class="headerlink" href="#config-file" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="config_file">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">config_file</span></span><a class="headerlink" href="#config_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides these data attributes:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.verbosity">
+<span class="sig-name descname"><span class="pre">verbosity</span></span><a class="headerlink" href="#config_file.verbosity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbosity level as specified in the config file.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.stat_interval">
+<span class="sig-name descname"><span class="pre">stat_interval</span></span><a class="headerlink" href="#config_file.stat_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Statistics interval (in seconds).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.stat_cumulative">
+<span class="sig-name descname"><span class="pre">stat_cumulative</span></span><a class="headerlink" href="#config_file.stat_cumulative" title="Permalink to this definition">¶</a></dt>
+<dd><p>If false, statistics values are reset after printing them.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.stat_extended">
+<span class="sig-name descname"><span class="pre">stat_extended</span></span><a class="headerlink" href="#config_file.stat_extended" title="Permalink to this definition">¶</a></dt>
+<dd><p>If true, the statistics are kept in greater detail.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.num_threads">
+<span class="sig-name descname"><span class="pre">num_threads</span></span><a class="headerlink" href="#config_file.num_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of threads to create.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.port">
+<span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#config_file.port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Port on which queries are answered.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.do_ip4">
+<span class="sig-name descname"><span class="pre">do_ip4</span></span><a class="headerlink" href="#config_file.do_ip4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do ip4 query support.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.do_ip6">
+<span class="sig-name descname"><span class="pre">do_ip6</span></span><a class="headerlink" href="#config_file.do_ip6" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do ip6 query support.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.do_udp">
+<span class="sig-name descname"><span class="pre">do_udp</span></span><a class="headerlink" href="#config_file.do_udp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do udp query support.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.do_tcp">
+<span class="sig-name descname"><span class="pre">do_tcp</span></span><a class="headerlink" href="#config_file.do_tcp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do tcp query support.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.outgoing_num_ports">
+<span class="sig-name descname"><span class="pre">outgoing_num_ports</span></span><a class="headerlink" href="#config_file.outgoing_num_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Outgoing port range number of ports (per thread).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.outgoing_num_tcp">
+<span class="sig-name descname"><span class="pre">outgoing_num_tcp</span></span><a class="headerlink" href="#config_file.outgoing_num_tcp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of outgoing tcp buffers per (per thread).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.incoming_num_tcp">
+<span class="sig-name descname"><span class="pre">incoming_num_tcp</span></span><a class="headerlink" href="#config_file.incoming_num_tcp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of incoming tcp buffers per (per thread).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.outgoing_avail_ports">
+<span class="sig-name descname"><span class="pre">outgoing_avail_ports</span></span><a class="headerlink" href="#config_file.outgoing_avail_ports" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allowed udp port numbers, array with 0 if not allowed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.msg_buffer_size">
+<span class="sig-name descname"><span class="pre">msg_buffer_size</span></span><a class="headerlink" href="#config_file.msg_buffer_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of bytes buffer size for DNS messages.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.msg_cache_size">
+<span class="sig-name descname"><span class="pre">msg_cache_size</span></span><a class="headerlink" href="#config_file.msg_cache_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the message cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.msg_cache_slabs">
+<span class="sig-name descname"><span class="pre">msg_cache_slabs</span></span><a class="headerlink" href="#config_file.msg_cache_slabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slabs in the message cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.num_queries_per_thread">
+<span class="sig-name descname"><span class="pre">num_queries_per_thread</span></span><a class="headerlink" href="#config_file.num_queries_per_thread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of queries every thread can service.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.jostle_time">
+<span class="sig-name descname"><span class="pre">jostle_time</span></span><a class="headerlink" href="#config_file.jostle_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of msec to wait before items can be jostled out.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.rrset_cache_size">
+<span class="sig-name descname"><span class="pre">rrset_cache_size</span></span><a class="headerlink" href="#config_file.rrset_cache_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the rrset cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.rrset_cache_slabs">
+<span class="sig-name descname"><span class="pre">rrset_cache_slabs</span></span><a class="headerlink" href="#config_file.rrset_cache_slabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slabs in the rrset cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.host_ttl">
+<span class="sig-name descname"><span class="pre">host_ttl</span></span><a class="headerlink" href="#config_file.host_ttl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Host cache ttl in seconds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.lame_ttl">
+<span class="sig-name descname"><span class="pre">lame_ttl</span></span><a class="headerlink" href="#config_file.lame_ttl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Host is lame for a zone ttl, in seconds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.infra_cache_slabs">
+<span class="sig-name descname"><span class="pre">infra_cache_slabs</span></span><a class="headerlink" href="#config_file.infra_cache_slabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of slabs in the infra host cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.infra_cache_numhosts">
+<span class="sig-name descname"><span class="pre">infra_cache_numhosts</span></span><a class="headerlink" href="#config_file.infra_cache_numhosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Max number of hosts in the infra cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.infra_cache_lame_size">
+<span class="sig-name descname"><span class="pre">infra_cache_lame_size</span></span><a class="headerlink" href="#config_file.infra_cache_lame_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Max size of lame zones per host in the infra cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.target_fetch_policy">
+<span class="sig-name descname"><span class="pre">target_fetch_policy</span></span><a class="headerlink" href="#config_file.target_fetch_policy" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target fetch policy for the iterator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.if_automatic">
+<span class="sig-name descname"><span class="pre">if_automatic</span></span><a class="headerlink" href="#config_file.if_automatic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatic interface for incoming messages. Uses ipv6 remapping,
+and recvmsg/sendmsg ancillary data to detect interfaces, boolean.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.num_ifs">
+<span class="sig-name descname"><span class="pre">num_ifs</span></span><a class="headerlink" href="#config_file.num_ifs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of interfaces to open. If 0 default all interfaces.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.ifs">
+<span class="sig-name descname"><span class="pre">ifs</span></span><a class="headerlink" href="#config_file.ifs" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of interface description strings (IP addresses).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.num_out_ifs">
+<span class="sig-name descname"><span class="pre">num_out_ifs</span></span><a class="headerlink" href="#config_file.num_out_ifs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of outgoing interfaces to open.
+If 0 default all interfaces.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.out_ifs">
+<span class="sig-name descname"><span class="pre">out_ifs</span></span><a class="headerlink" href="#config_file.out_ifs" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of outgoing interface description strings (IP addresses).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.root_hints">
+<span class="sig-name descname"><span class="pre">root_hints</span></span><a class="headerlink" href="#config_file.root_hints" title="Permalink to this definition">¶</a></dt>
+<dd><p>The root hints.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.stubs">
+<span class="sig-name descname"><span class="pre">stubs</span></span><a class="headerlink" href="#config_file.stubs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The stub definitions, linked list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.forwards">
+<span class="sig-name descname"><span class="pre">forwards</span></span><a class="headerlink" href="#config_file.forwards" title="Permalink to this definition">¶</a></dt>
+<dd><p>The forward zone definitions, linked list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.donotqueryaddrs">
+<span class="sig-name descname"><span class="pre">donotqueryaddrs</span></span><a class="headerlink" href="#config_file.donotqueryaddrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of donotquery addresses, linked list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.acls">
+<span class="sig-name descname"><span class="pre">acls</span></span><a class="headerlink" href="#config_file.acls" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of access control entries, linked list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.donotquery_localhost">
+<span class="sig-name descname"><span class="pre">donotquery_localhost</span></span><a class="headerlink" href="#config_file.donotquery_localhost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use default localhost donotqueryaddr entries.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.harden_short_bufsize">
+<span class="sig-name descname"><span class="pre">harden_short_bufsize</span></span><a class="headerlink" href="#config_file.harden_short_bufsize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Harden against very small edns buffer sizes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.harden_large_queries">
+<span class="sig-name descname"><span class="pre">harden_large_queries</span></span><a class="headerlink" href="#config_file.harden_large_queries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Harden against very large query sizes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.harden_glue">
+<span class="sig-name descname"><span class="pre">harden_glue</span></span><a class="headerlink" href="#config_file.harden_glue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Harden against spoofed glue (out of zone data).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.harden_dnssec_stripped">
+<span class="sig-name descname"><span class="pre">harden_dnssec_stripped</span></span><a class="headerlink" href="#config_file.harden_dnssec_stripped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Harden against receiving no DNSSEC data for trust anchor.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.harden_referral_path">
+<span class="sig-name descname"><span class="pre">harden_referral_path</span></span><a class="headerlink" href="#config_file.harden_referral_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Harden the referral path, query for NS,A,AAAA and validate.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.use_caps_bits_for_id">
+<span class="sig-name descname"><span class="pre">use_caps_bits_for_id</span></span><a class="headerlink" href="#config_file.use_caps_bits_for_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use 0x20 bits in query as random ID bits.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.private_address">
+<span class="sig-name descname"><span class="pre">private_address</span></span><a class="headerlink" href="#config_file.private_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strip away these private addrs from answers, no DNS Rebinding.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.private_domain">
+<span class="sig-name descname"><span class="pre">private_domain</span></span><a class="headerlink" href="#config_file.private_domain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allow domain (and subdomains) to use private address space.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.unwanted_threshold">
+<span class="sig-name descname"><span class="pre">unwanted_threshold</span></span><a class="headerlink" href="#config_file.unwanted_threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>What threshold for unwanted action.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.chrootdir">
+<span class="sig-name descname"><span class="pre">chrootdir</span></span><a class="headerlink" href="#config_file.chrootdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chrootdir, if not “” or chroot will be done.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.username">
+<span class="sig-name descname"><span class="pre">username</span></span><a class="headerlink" href="#config_file.username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Username to change to, if not “”.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.directory">
+<span class="sig-name descname"><span class="pre">directory</span></span><a class="headerlink" href="#config_file.directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Working directory.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.logfile">
+<span class="sig-name descname"><span class="pre">logfile</span></span><a class="headerlink" href="#config_file.logfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filename to log to.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.pidfile">
+<span class="sig-name descname"><span class="pre">pidfile</span></span><a class="headerlink" href="#config_file.pidfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pidfile to write pid to.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.use_syslog">
+<span class="sig-name descname"><span class="pre">use_syslog</span></span><a class="headerlink" href="#config_file.use_syslog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should log messages be sent to syslogd.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.hide_identity">
+<span class="sig-name descname"><span class="pre">hide_identity</span></span><a class="headerlink" href="#config_file.hide_identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not report identity (id.server, hostname.bind).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.hide_version">
+<span class="sig-name descname"><span class="pre">hide_version</span></span><a class="headerlink" href="#config_file.hide_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not report version (version.server, version.bind).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.identity">
+<span class="sig-name descname"><span class="pre">identity</span></span><a class="headerlink" href="#config_file.identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identity, hostname is returned if “”.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.version">
+<span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#config_file.version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Version, package version returned if “”.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.module_conf">
+<span class="sig-name descname"><span class="pre">module_conf</span></span><a class="headerlink" href="#config_file.module_conf" title="Permalink to this definition">¶</a></dt>
+<dd><p>The module configuration string.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.trust_anchor_file_list">
+<span class="sig-name descname"><span class="pre">trust_anchor_file_list</span></span><a class="headerlink" href="#config_file.trust_anchor_file_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Files with trusted DS and DNSKEYs in zonefile format, list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.trust_anchor_list">
+<span class="sig-name descname"><span class="pre">trust_anchor_list</span></span><a class="headerlink" href="#config_file.trust_anchor_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of trustanchor keys, linked list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.trusted_keys_file_list">
+<span class="sig-name descname"><span class="pre">trusted_keys_file_list</span></span><a class="headerlink" href="#config_file.trusted_keys_file_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Files with trusted DNSKEYs in named.conf format, list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.max_ttl">
+<span class="sig-name descname"><span class="pre">max_ttl</span></span><a class="headerlink" href="#config_file.max_ttl" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of seconds maximal TTL used for RRsets and messages.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.val_date_override">
+<span class="sig-name descname"><span class="pre">val_date_override</span></span><a class="headerlink" href="#config_file.val_date_override" title="Permalink to this definition">¶</a></dt>
+<dd><p>If not 0, this value is the validation date for RRSIGs.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.bogus_ttl">
+<span class="sig-name descname"><span class="pre">bogus_ttl</span></span><a class="headerlink" href="#config_file.bogus_ttl" title="Permalink to this definition">¶</a></dt>
+<dd><p>This value sets the number of seconds before revalidating bogus.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.val_clean_additional">
+<span class="sig-name descname"><span class="pre">val_clean_additional</span></span><a class="headerlink" href="#config_file.val_clean_additional" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should validator clean additional section for secure msgs.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.val_permissive_mode">
+<span class="sig-name descname"><span class="pre">val_permissive_mode</span></span><a class="headerlink" href="#config_file.val_permissive_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should validator allow bogus messages to go through.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.val_nsec3_key_iterations">
+<span class="sig-name descname"><span class="pre">val_nsec3_key_iterations</span></span><a class="headerlink" href="#config_file.val_nsec3_key_iterations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nsec3 maximum iterations per key size, string.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.key_cache_size">
+<span class="sig-name descname"><span class="pre">key_cache_size</span></span><a class="headerlink" href="#config_file.key_cache_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the key cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.key_cache_slabs">
+<span class="sig-name descname"><span class="pre">key_cache_slabs</span></span><a class="headerlink" href="#config_file.key_cache_slabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slabs in the key cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.neg_cache_size">
+<span class="sig-name descname"><span class="pre">neg_cache_size</span></span><a class="headerlink" href="#config_file.neg_cache_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Size of the neg cache.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.local_zones">
+<span class="sig-name descname"><span class="pre">local_zones</span></span><a class="headerlink" href="#config_file.local_zones" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local zones config.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.local_zones_nodefault">
+<span class="sig-name descname"><span class="pre">local_zones_nodefault</span></span><a class="headerlink" href="#config_file.local_zones_nodefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local zones nodefault list.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.local_data">
+<span class="sig-name descname"><span class="pre">local_data</span></span><a class="headerlink" href="#config_file.local_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local data RRs configured.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.remote_control_enable">
+<span class="sig-name descname"><span class="pre">remote_control_enable</span></span><a class="headerlink" href="#config_file.remote_control_enable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remote control section. enable toggle.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.control_ifs">
+<span class="sig-name descname"><span class="pre">control_ifs</span></span><a class="headerlink" href="#config_file.control_ifs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The interfaces the remote control should listen on.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.control_port">
+<span class="sig-name descname"><span class="pre">control_port</span></span><a class="headerlink" href="#config_file.control_port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Port number for the control port.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.server_key_file">
+<span class="sig-name descname"><span class="pre">server_key_file</span></span><a class="headerlink" href="#config_file.server_key_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Private key file for server.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.server_cert_file">
+<span class="sig-name descname"><span class="pre">server_cert_file</span></span><a class="headerlink" href="#config_file.server_cert_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Certificate file for server.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.control_key_file">
+<span class="sig-name descname"><span class="pre">control_key_file</span></span><a class="headerlink" href="#config_file.control_key_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Private key file for unbound-control.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.control_cert_file">
+<span class="sig-name descname"><span class="pre">control_cert_file</span></span><a class="headerlink" href="#config_file.control_cert_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Certificate file for unbound-control.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.do_daemonize">
+<span class="sig-name descname"><span class="pre">do_daemonize</span></span><a class="headerlink" href="#config_file.do_daemonize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Daemonize, i.e. fork into the background.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="config_file.python_script">
+<span class="sig-name descname"><span class="pre">python_script</span></span><a class="headerlink" href="#config_file.python_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linked list of Python script files.
+Deprecated; <cite>mod_env[‘script’]</cite> should be used instead.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration interface</a><ul>
+<li><a class="reference internal" href="#config-file">config_file</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="functions.html"
+                        title="previous chapter">Scriptable functions</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="functions.html" title="Scriptable functions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Unbound scriptable interface 1.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Unbound module documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Configuration interface</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2009, Zdenek Vasicek, Marek Vavrusa.
+      Last updated on Nov 17, 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>

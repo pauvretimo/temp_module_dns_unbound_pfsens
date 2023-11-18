@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Scriptable functions &#8212; Unbound scriptable interface 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuration interface" href="config.html" />
+    <link rel="prev" title="Scriptable structures" href="struct.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="config.html" title="Configuration interface"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="struct.html" title="Scriptable structures"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Unbound scriptable interface 1.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Unbound module documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Scriptable functions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="scriptable-functions">
+<h1>Scriptable functions<a class="headerlink" href="#scriptable-functions" title="Permalink to this headline">¶</a></h1>
+<section id="network">
+<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ntohs">
+<span class="sig-name descname"><span class="pre">ntohs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">netshort</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ntohs" title="Permalink to this definition">¶</a></dt>
+<dd><p>This subroutine converts values between the host and network byte order.
+Specifically, <strong>ntohs()</strong> converts 16-bit quantities from network byte order
+to host byte order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>netshort</strong> – 16-bit short addr</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>converted addr</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="cache">
+<h2>Cache<a class="headerlink" href="#cache" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="storeQueryInCache">
+<span class="sig-name descname"><span class="pre">storeQueryInCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qstate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qinfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msgrep</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_referral</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#storeQueryInCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store pending query in local cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>qstate</strong> – <a class="reference internal" href="struct.html#module_qstate" title="module_qstate"><code class="xref py py-class docutils literal notranslate"><span class="pre">module_qstate</span></code></a></p></li>
+<li><p><strong>qinfo</strong> – <a class="reference internal" href="struct.html#query_info" title="query_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">query_info</span></code></a></p></li>
+<li><p><strong>msgrep</strong> – <a class="reference internal" href="struct.html#reply_info" title="reply_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">reply_info</span></code></a></p></li>
+<li><p><strong>is_referral</strong> – integer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="invalidateQueryInCache">
+<span class="sig-name descname"><span class="pre">invalidateQueryInCache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qstate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qinfo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#invalidateQueryInCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Invalidate record in local cache.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>qstate</strong> – <a class="reference internal" href="struct.html#module_qstate" title="module_qstate"><code class="xref py py-class docutils literal notranslate"><span class="pre">module_qstate</span></code></a></p></li>
+<li><p><strong>qinfo</strong> – <a class="reference internal" href="struct.html#query_info" title="query_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">query_info</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="edns-options">
+<h2>EDNS options<a class="headerlink" href="#edns-options" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="register_edns_option">
+<span class="sig-name descname"><span class="pre">register_edns_option</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_cache_stage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_aggregation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#register_edns_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register EDNS option code.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>env</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">module_env</span></code></p></li>
+<li><p><strong>code</strong> – option code(integer)</p></li>
+<li><p><strong>bypass_cache_stage</strong> – whether to bypass the cache response stage</p></li>
+<li><p><strong>no_aggregation</strong> – whether this query should be unique</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if successful, <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="edns_opt_list_find">
+<span class="sig-name descname"><span class="pre">edns_opt_list_find</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edns_opt_list_find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the EDNS option code in the EDNS option list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list</strong> – linked list of <a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a></p></li>
+<li><p><strong>code</strong> – option code (integer)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the edns option if found or None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a> or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">edns_opt_list_remove(list,</span> <span class="pre">code);</span></span></dt>
+<dd><p>Remove an EDNS option code from the list.
+.. note:: All <a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a> with the code will be removed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list</strong> – linked list of <a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a></p></li>
+<li><p><strong>code</strong> – option code (integer)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if at least one <a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a> was removed, <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="edns_opt_list_append">
+<span class="sig-name descname"><span class="pre">edns_opt_list_append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edns_opt_list_append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append given EDNS option code with data to the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list</strong> – linked list of <a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a></p></li>
+<li><p><strong>code</strong> – option code (integer)</p></li>
+<li><p><strong>data</strong> – EDNS data. <strong>Must</strong> be a <code class="xref py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></p></li>
+<li><p><strong>region</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">regional</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="edns_opt_list_is_empty">
+<span class="sig-name descname"><span class="pre">edns_opt_list_is_empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#edns_opt_list_is_empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an EDNS option list is empty.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>list</strong> – linked list of <a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">1</span></code> if list is empty, <code class="docutils literal notranslate"><span class="pre">0</span></code> otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="inplace-callbacks">
+<h2>Inplace callbacks<a class="headerlink" href="#inplace-callbacks" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="inplace_cb_reply">
+<span class="sig-name descname"><span class="pre">inplace_cb_reply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qinfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qstate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rep</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt_list_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#inplace_cb_reply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function prototype for callback functions used in
+<cite>register_inplace_cb_reply</cite>, <cite>register_inplace_cb_reply_cache</cite>,
+<cite>register_inplace_cb_reply_local</cite> and <cite>register_inplace_cb_reply_servfail</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>qinfo</strong> – <a class="reference internal" href="struct.html#query_info" title="query_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">query_info</span></code></a></p></li>
+<li><p><strong>qstate</strong> – <a class="reference internal" href="struct.html#module_qstate" title="module_qstate"><code class="xref py py-class docutils literal notranslate"><span class="pre">module_qstate</span></code></a></p></li>
+<li><p><strong>rep</strong> – <a class="reference internal" href="struct.html#reply_info" title="reply_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">reply_info</span></code></a></p></li>
+<li><p><strong>rcode</strong> – return code (integer), check <code class="docutils literal notranslate"><span class="pre">RCODE_</span></code> constants.</p></li>
+<li><p><strong>edns</strong> – <a class="reference internal" href="struct.html#edns_data" title="edns_data"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_data</span></code></a></p></li>
+<li><p><strong>opt_list_out</strong> – <a class="reference internal" href="struct.html#edns_option" title="edns_option"><code class="xref py py-class docutils literal notranslate"><span class="pre">edns_option</span></code></a>. EDNS option list to append options to.</p></li>
+<li><p><strong>region</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">regional</span></code></p></li>
+<li><p><strong>**kwargs</strong> – Dictionary that may contain parameters added in a future
+release. Current parameters:
+<code class="docutils literal notranslate"><span class="pre">repinfo</span></code>: <code class="xref py py-class docutils literal notranslate"><span class="pre">comm_reply</span></code>. Reply information for a communication point.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="inplace_cb_query">
+<span class="sig-name descname"><span class="pre">inplace_cb_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">qinfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qstate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zone</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#inplace_cb_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function prototype for callback functions used in
+<cite>register_inplace_cb_query</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>qinfo</strong> – <a class="reference internal" href="struct.html#query_info" title="query_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">query_info</span></code></a></p></li>
+<li><p><strong>flags</strong> – query flags (integer)</p></li>
+<li><p><strong>qstate</strong> – <a class="reference internal" href="struct.html#module_qstate" title="module_qstate"><code class="xref py py-class docutils literal notranslate"><span class="pre">module_qstate</span></code></a></p></li>
+<li><p><strong>addr</strong> – <a class="reference internal" href="struct.html#sockaddr_storage" title="sockaddr_storage"><code class="xref py py-class docutils literal notranslate"><span class="pre">sockaddr_storage</span></code></a></p></li>
+<li><p><strong>zone</strong> – zone name in wire format (bytes)</p></li>
+<li><p><strong>region</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">regional</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="register_inplace_cb_reply">
+<span class="sig-name descname"><span class="pre">register_inplace_cb_reply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_cb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#register_inplace_cb_reply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register py_cb as an inplace reply callback function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>py_cb</strong> – Python function that follows <cite>inplace_cb_reply</cite>’s prototype. <strong>Must</strong> be callable.</p></li>
+<li><p><strong>env</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">module_env</span></code></p></li>
+<li><p><strong>id</strong> – Module ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="register_inplace_cb_reply_cache">
+<span class="sig-name descname"><span class="pre">register_inplace_cb_reply_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_cb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#register_inplace_cb_reply_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register py_cb as an inplace reply_cache callback function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>py_cb</strong> – Python function that follows <cite>inplace_cb_reply</cite>’s prototype. <strong>Must</strong> be callable.</p></li>
+<li><p><strong>env</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">module_env</span></code></p></li>
+<li><p><strong>id</strong> – Module ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="register_inplace_cb_reply_local">
+<span class="sig-name descname"><span class="pre">register_inplace_cb_reply_local</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_cb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#register_inplace_cb_reply_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register py_cb as an inplace reply_local callback function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>py_cb</strong> – Python function that follows <cite>inplace_cb_reply</cite>’s prototype. <strong>Must</strong> be callable.</p></li>
+<li><p><strong>env</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">module_env</span></code></p></li>
+<li><p><strong>id</strong> – Module ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="register_inplace_cb_reply_servfail">
+<span class="sig-name descname"><span class="pre">register_inplace_cb_reply_servfail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_cb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#register_inplace_cb_reply_servfail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register py_cb as an inplace reply_servfail callback function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>py_cb</strong> – Python function that follows <cite>inplace_cb_reply</cite>’s prototype. <strong>Must</strong> be callable.</p></li>
+<li><p><strong>env</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">module_env</span></code></p></li>
+<li><p><strong>id</strong> – Module ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="register_inplace_cb_query">
+<span class="sig-name descname"><span class="pre">register_inplace_cb_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">py_cb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#register_inplace_cb_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register py_cb as an inplace query callback function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>py_cb</strong> – Python function that follows <cite>inplace_cb_query</cite>’s prototype. <strong>Must</strong> be callable.</p></li>
+<li><p><strong>env</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">module_env</span></code></p></li>
+<li><p><strong>id</strong> – Module ID.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True on success, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="verbose">
+<span class="sig-name descname"><span class="pre">verbose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log a verbose message, pass the level for this message.
+No trailing newline is needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level</strong> – verbosity level for this message, compared to global verbosity setting.</p></li>
+<li><p><strong>msg</strong> – string message</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="log_info">
+<span class="sig-name descname"><span class="pre">log_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#log_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log informational message. No trailing newline is needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – string message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="log_err">
+<span class="sig-name descname"><span class="pre">log_err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#log_err" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log error message. No trailing newline is needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – string message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="log_warn">
+<span class="sig-name descname"><span class="pre">log_warn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#log_warn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log warning message. No trailing newline is needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> – string message</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="log_hex">
+<span class="sig-name descname"><span class="pre">log_hex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#log_hex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log a hex-string to the log. Can be any length.
+performs mallocs to do so, slow. But debug useful.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>msg</strong> – string desc to accompany the hexdump.</p></li>
+<li><p><strong>data</strong> – data to dump in hex format.</p></li>
+<li><p><strong>length</strong> – length of data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="log_dns_msg">
+<span class="sig-name descname"><span class="pre">log_dns_msg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qinfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reply</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#log_dns_msg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log DNS message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>str</strong> – string message</p></li>
+<li><p><strong>qinfo</strong> – <a class="reference internal" href="struct.html#query_info" title="query_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">query_info</span></code></a></p></li>
+<li><p><strong>reply</strong> – <a class="reference internal" href="struct.html#reply_info" title="reply_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">reply_info</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="log_query_info">
+<span class="sig-name descname"><span class="pre">log_query_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbosity_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qinf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#log_query_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log query information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>verbosity_value</strong> – see constants</p></li>
+<li><p><strong>str</strong> – string message</p></li>
+<li><p><strong>qinf</strong> – <a class="reference internal" href="struct.html#query_info" title="query_info"><code class="xref py py-class docutils literal notranslate"><span class="pre">query_info</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="regional_log_stats">
+<span class="sig-name descname"><span class="pre">regional_log_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#regional_log_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Log regional statistics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>r</strong> – <code class="xref py py-class docutils literal notranslate"><span class="pre">regional</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="strextstate">
+<span class="sig-name descname"><span class="pre">strextstate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_ext_state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#strextstate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug utility, module external qstate to string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module_ext_state</strong> – the state value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>descriptive string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="strmodulevent">
+<span class="sig-name descname"><span class="pre">strmodulevent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module_event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#strmodulevent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debug utility, module event to string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>module_event</strong> – the module event value.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>descriptive string.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ldns_rr_type2str">
+<span class="sig-name descname"><span class="pre">ldns_rr_type2str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atype</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ldns_rr_type2str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert RR type to string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ldns_rr_class2str">
+<span class="sig-name descname"><span class="pre">ldns_rr_class2str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aclass</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ldns_rr_class2str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert RR class to string.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Scriptable functions</a><ul>
+<li><a class="reference internal" href="#network">Network</a></li>
+<li><a class="reference internal" href="#cache">Cache</a></li>
+<li><a class="reference internal" href="#edns-options">EDNS options</a></li>
+<li><a class="reference internal" href="#inplace-callbacks">Inplace callbacks</a></li>
+<li><a class="reference internal" href="#logging">Logging</a></li>
+<li><a class="reference internal" href="#debugging">Debugging</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="struct.html"
+                        title="previous chapter">Scriptable structures</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="next chapter">Configuration interface</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="config.html" title="Configuration interface"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="struct.html" title="Scriptable structures"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Unbound scriptable interface 1.0.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Unbound module documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Scriptable functions</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2009, Zdenek Vasicek, Marek Vavrusa.
+      Last updated on Nov 17, 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>

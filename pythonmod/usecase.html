@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Use cases (examples) &#8212; Unbound scriptable interface 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Unbound module documentation" href="modules/index.html" />
+    <link rel="prev" title="Inplace callbacks" href="examples/example6.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="modules/index.html" title="Unbound module documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="examples/example6.html" title="Inplace callbacks"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Unbound scriptable interface 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use cases (examples)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="use-cases-examples">
+<h1>Use cases (examples)<a class="headerlink" href="#use-cases-examples" title="Permalink to this headline">¶</a></h1>
+<section id="dynamic-dns-service-discovery-dns-sd">
+<h2>Dynamic DNS Service discovery (<a class="reference external" href="http://www.dns-sd.org/">DNS-SD</a>)<a class="headerlink" href="#dynamic-dns-service-discovery-dns-sd" title="Permalink to this headline">¶</a></h2>
+<p>Synchronized with database engine, for example <em>MySQL</em>.</p>
+</section>
+<section id="firewall-control">
+<h2>Firewall control<a class="headerlink" href="#firewall-control" title="Permalink to this headline">¶</a></h2>
+<p>Control firewall (e.g. enable incoming SSH connection) with DNS query signed with private key.
+So firewall can blocks every service during normal operation.</p>
+</section>
+<section id="scriptable-dns-based-blacklist-dns-bl">
+<h2>Scriptable DNS-based blacklist (<a class="reference external" href="http://www.dnsbl.org">DNS-BL</a>)<a class="headerlink" href="#scriptable-dns-based-blacklist-dns-bl" title="Permalink to this headline">¶</a></h2>
+<p>Scripted in Python with already provided features, takes advantage of DNS reply, because
+almost every mail server supports DNS based blacklisting.</p>
+</section>
+<section id="dns-based-wake-on-lan">
+<h2>DNS based Wake-On-Lan<a class="headerlink" href="#dns-based-wake-on-lan" title="Permalink to this headline">¶</a></h2>
+<p>Controlled by secured queries secured with private key.</p>
+</section>
+<section id="dynamic-translation-service">
+<h2>Dynamic translation service<a class="headerlink" href="#dynamic-translation-service" title="Permalink to this headline">¶</a></h2>
+<p>DNS request can be translated to virtually any answer, that’s easy to implement in client side
+because of many DNS libraries available.</p>
+<dl class="simple">
+<dt>Examples :</dt><dd><ul class="simple">
+<li><p><strong>Dictionary</strong> - using <em>IDN</em> for non-ascii strings transfer, <code class="docutils literal notranslate"><span class="pre">dig</span> <span class="pre">TXT</span> <span class="pre">slovo.en._dict_.nic.cz</span></code> returns translation of “slovo” to EN.</p></li>
+<li><p><strong>Translation</strong> - Extends <em>DNS-SD</em>, for example DNS to Jabber to find out people logged in.</p></li>
+<li><p><strong>Exchange rate calculator</strong> - <code class="docutils literal notranslate"><span class="pre">dig</span> <span class="pre">TXT</span> <span class="pre">1000.99.czk.eur._rates_.nic.cz</span></code> returns the given sum (1000.99 CZK) in EURs.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="dynamic-enum-service">
+<h2>Dynamic ENUM service<a class="headerlink" href="#dynamic-enum-service" title="Permalink to this headline">¶</a></h2>
+<p>Support for redirection, synchronization, etc.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Use cases (examples)</a><ul>
+<li><a class="reference internal" href="#dynamic-dns-service-discovery-dns-sd">Dynamic DNS Service discovery (DNS-SD)</a></li>
+<li><a class="reference internal" href="#firewall-control">Firewall control</a></li>
+<li><a class="reference internal" href="#scriptable-dns-based-blacklist-dns-bl">Scriptable DNS-based blacklist (DNS-BL)</a></li>
+<li><a class="reference internal" href="#dns-based-wake-on-lan">DNS based Wake-On-Lan</a></li>
+<li><a class="reference internal" href="#dynamic-translation-service">Dynamic translation service</a></li>
+<li><a class="reference internal" href="#dynamic-enum-service">Dynamic ENUM service</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="examples/example6.html"
+                        title="previous chapter">Inplace callbacks</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="modules/index.html"
+                        title="next chapter">Unbound module documentation</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="modules/index.html" title="Unbound module documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="examples/example6.html" title="Inplace callbacks"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Unbound scriptable interface 1.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Use cases (examples)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2009, Zdenek Vasicek, Marek Vavrusa.
+      Last updated on Nov 17, 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>
