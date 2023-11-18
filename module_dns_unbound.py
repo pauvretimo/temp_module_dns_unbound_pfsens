@@ -53,20 +53,10 @@ def deinit(id): return True
 def inform_super(id, qstate, superqstate, qdata): return True
 
 def operate(id, event, qstate, qdata):
-    try:
     # when a dns query arrive
         if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS): 
             rl = qstate.mesh_info.reply_list
-            raise Exception(str(rl))
-            
-            # check if the ip is in the table (networks)
-            
-        #if ip from query is not in table, pass the query to validator  
-        #pass the query to validator
-        qstate.ext_state[id] = MODULE_WAIT_MODULE  
-        return True
-    except Exception as e:
-        print("error")
+            raise Exception(str(list(rl)))
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
         qstate.ext_state[id] = MODULE_WAIT_MODULE  
