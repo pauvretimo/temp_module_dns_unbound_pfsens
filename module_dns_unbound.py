@@ -17,6 +17,8 @@ def deinit(id): return True
 def inform_super(id, qstate, superqstate, qdata): return True
 
 def operate(id, event, qstate, qdata):
+    qstate.ext_state[id] = MODULE_WAIT_MODULE 
+    return True
     try:
     # when a dns query arrive
         if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS):
