@@ -46,6 +46,10 @@ def operate(id, event, qstate, qdata):
                         qstate.return_rcode = RCODE_NOERROR
                         qstate.ext_state[id] = MODULE_FINISHED 
                         return True 
+        #if ip from query is not in table, pass the query to validator  
+        #pass the query to validator
+        qstate.ext_state[id] = MODULE_WAIT_MODULE 
+        return True
     except:
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
