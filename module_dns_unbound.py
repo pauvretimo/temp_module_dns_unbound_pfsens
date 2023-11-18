@@ -44,7 +44,7 @@ dns_table = {}
 def init(id, cfg): 
    global dns_table
    global _dns_table
-   for ip, data in _dns_table:
+   for ip, data in _dns_table.items():
       dns_table[ipaddress.ip_network(ip)] = data
    return True
 
