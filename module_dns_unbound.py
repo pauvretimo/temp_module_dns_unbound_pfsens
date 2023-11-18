@@ -55,40 +55,12 @@ def inform_super(id, qstate, superqstate, qdata): return True
 def operate(id, event, qstate, qdata):
     try:
     # when a dns query arrive
-        if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS):
+        if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS): 
+            rl = qstate.mesh_info.reply_list
+            print(rl)
             
             # check if the ip is in the table (networks)
-            for network, rules in dns_table.items():
-                if addr in network:
-                    # check if the domain is in the table (rules)
-                    if qstate.qinfo.qname_str in rules.keys():
-                        #create instance of DNS message (packet) with given parameters
-                        msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
-                        if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):  
-                            rl = qstate.mesh_info.reply_list
-                            print(rl)
-                            while (rl):
-                                if rl.query_reply:
-                                    q = rl.query_reply
-                                    # get the source ip
-                                    addr = ipaddress.ip_address(q.addr)
-                                    res_ip = rules[qstate.qinfo.qname_str]
-                                    # The TTL of 0 is mandatory, otherwise it ends up in
-                                    # the cache, and is returned to other IP addresses.
-                                    msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip)
-                                rl = rl.next
-                            setTTL(qstate, 0)
-                        if not msg.set_return_msg(qstate):
-                            print("5")
-                            qstate.ext_state[id] = MODULE_ERROR 
-                            return True
-
-                        #we don't need validation, result is valid
-                        qstate.return_msg.rep.security = 2
-
-                        qstate.return_rcode = RCODE_NOERROR
-                        qstate.ext_state[id] = MODULE_FINISHED 
-                        return True 
+            
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
         qstate.ext_state[id] = MODULE_FINISHED 
