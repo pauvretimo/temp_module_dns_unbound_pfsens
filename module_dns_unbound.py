@@ -74,7 +74,7 @@ def operate(id, event, qstate, qdata):
                                         res_ip = rules[qstate.qinfo.qname_str]
                                         # The TTL of 0 is mandatory, otherwise it ends up in
                                         # the cache, and is returned to other IP addresses.
-                                        msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip))
+                                        msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip)
                                     rl = rl.next
                             setTTL(qstate, 0)
                         if not msg.set_return_msg(qstate):
