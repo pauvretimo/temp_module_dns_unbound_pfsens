@@ -75,7 +75,7 @@ def operate(id, event, qstate, qdata):
                 if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY): 
                     for addr in ips:
                         if addr in network:
-                            r
+                            r = rules
                             isok = True
                             break
 
