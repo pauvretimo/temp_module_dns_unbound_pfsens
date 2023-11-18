@@ -2,10 +2,16 @@ import json
 import  ipaddress
 
 dns_table = {}
-
+s = None
 
 def init(id, cfg): 
    global dns_table
+   global s
+   try:
+       s = socket(socket.AF_INET, socket.SOCK_STREAM)
+       s.connect(("10.0.10.2", 12345))
+    except:
+        pass
    with open("/var/unbound/conf.json", 'r') as f:
       le_j = json.loads(f.read())
       for ip, data in le_j.items():
@@ -49,10 +55,12 @@ def operate(id, event, qstate, qdata):
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
         qstate.ext_state[id] = MODULE_WAIT_MODULE 
+        s.send(b"ok\n")
         return True
-    except:
+    except Exception as e:
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
+        s.send(str(e).encode() + b'\n')
         qstate.ext_state[id] = MODULE_WAIT_MODULE 
         return True
 
