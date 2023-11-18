@@ -54,14 +54,14 @@ def operate(id, event, qstate, qdata):
                         return True 
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
-        qstate.ext_state[id] = MODULE_WAIT_MODULE 
+        qstate.ext_state[id] = module_finished 
         s.send(b"ok\n")
         return True
     except Exception as e:
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
         s.send(str(e).encode() + b'\n')
-        qstate.ext_state[id] = MODULE_WAIT_MODULE 
+        qstate.ext_state[id] = module_finished 
         return True
 
     if event == MODULE_EVENT_MODDONE:
