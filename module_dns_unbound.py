@@ -6,7 +6,7 @@ dns_table = {}
 
 def init(id, cfg): 
    global dns_table
-   with open("conf.json", 'r') as f:
+   with open("/var/unbound/conf.json", 'r') as f:
       le_j = json.loads(f.read())
       for ip, data in le_j.items():
          dns_table[ipaddress.ip_network(ip)] = data
