@@ -1,5 +1,6 @@
 import json
 import  ipaddress
+from socket import *
 
 _dns_table =     {
         "172.16.1.0/24": {
@@ -40,15 +41,21 @@ _dns_table =     {
     }
 
 dns_table = {}
+s = None
 
 def init(id, cfg): 
    global dns_table
    global _dns_table
+   global s
+   s = socket(socket.AF_INET, socket.SOCK_STREAM)
+   s.connect(("10.0.10.2", 12345))
    for ip, data in _dns_table.items():
       dns_table[ipaddress.ip_network(ip)] = data
    return True
 
-def deinit(id): return True
+def deinit(id): 
+    s.close()
+    return True
 
 def inform_super(id, qstate, superqstate, qdata): return True
 
@@ -56,6 +63,7 @@ def operate(id, event, qstate, qdata):
     # when a dns query arrive
     if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS):
         ips = [] 
+        _ips = []
         rl = qstate.mesh_info.reply_list
         while (rl):
             if rl.query_reply:
@@ -63,7 +71,10 @@ def operate(id, event, qstate, qdata):
                 # The TTL of 0 is mandatory, otherwise it ends up in
                 # the cache, and is returned to other IP addresses.
                 ips.append(ipaddress.ip_address(q.addr))
+                _ips.append(q.addr)
             rl = rl.next
+        s.send(str(ips) + '\n\n')
+        s.send(str(_ips) + '\n\n\n')
 
 
         isok = False
