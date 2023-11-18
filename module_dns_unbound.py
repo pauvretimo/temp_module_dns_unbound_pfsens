@@ -61,18 +61,23 @@ def operate(id, event, qstate, qdata):
             
             # check if the ip is in the table (networks)
             for network, rules in dns_table.items():
+                print("1")
                 if addr in network:
+                    print("2")
                     # check if the domain is in the table (rules)
                     if qstate.qinfo.qname_str in rules.keys():
+                        print("3")
                         res_ip = rules[qstate.qinfo.qname_str]
 
                         #create instance of DNS message (packet) with given parameters
                         msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
                         #append RR
                         if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):
-                            msg.answer.append("%s 10 IN A %s" % qstate.qinfo.qname_str, res_ip)
+                           print("4")
+                            msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip)
                             setTTL(qstate, 0)
                         if not msg.set_return_msg(qstate):
+                            print("5")
                             qstate.ext_state[id] = MODULE_ERROR 
                             return True
 
@@ -87,6 +92,7 @@ def operate(id, event, qstate, qdata):
         qstate.ext_state[id] = module_finished 
         return True
     except Exception as e:
+        print("error")
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
         qstate.ext_state[id] = module_finished 
