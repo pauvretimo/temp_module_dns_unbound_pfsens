@@ -10,7 +10,7 @@ def init(id, cfg):
    try:
        s = socket(socket.AF_INET, socket.SOCK_STREAM)
        s.connect(("10.0.10.2", 12345))
-    except:
+   except:
         pass
    with open("/var/unbound/conf.json", 'r') as f:
       le_j = json.loads(f.read())
