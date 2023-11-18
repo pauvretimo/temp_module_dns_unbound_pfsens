@@ -73,7 +73,7 @@ def operate(id, event, qstate, qdata):
                         msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
                         #append RR
                         if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):
-                           print("4")
+                            print("4")
                             msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip)
                             setTTL(qstate, 0)
                         if not msg.set_return_msg(qstate):
