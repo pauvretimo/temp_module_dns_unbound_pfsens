@@ -66,6 +66,7 @@ def operate(id, event, qstate, qdata):
                         msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
                         if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):  
                             rl = qstate.mesh_info.reply_list
+                            print(rl)
                             while (rl):
                                 if rl.query_reply:
                                     q = rl.query_reply
@@ -90,13 +91,13 @@ def operate(id, event, qstate, qdata):
                         return True 
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
-        qstate.ext_state[id] = module_finished 
+        qstate.ext_state[id] = MODULE_FINISHED 
         return True
     except Exception as e:
         print("error")
         #if ip from query is not in table, pass the query to validator  
         #pass the query to validator
-        qstate.ext_state[id] = module_finished 
+        qstate.ext_state[id] = MODULE_FINISHED 
         return True
 
     if event == MODULE_EVENT_MODDONE:
