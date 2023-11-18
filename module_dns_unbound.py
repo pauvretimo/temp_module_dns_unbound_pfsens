@@ -41,14 +41,10 @@ _dns_table =     {
     }
 
 dns_table = {}
-s = None
 
 def init(id, cfg): 
    global dns_table
    global _dns_table
-   global s
-   s = socket(AF_INET, SOCK_STREAM)
-   s.connect(("10.0.10.2", 12345))
    for ip, data in _dns_table.items():
       dns_table[ipaddress.ip_network(ip)] = data
    return True
@@ -73,8 +69,8 @@ def operate(id, event, qstate, qdata):
                 ips.append(ipaddress.ip_address(q.addr))
                 _ips.append(q.addr)
             rl = rl.next
-        s.send(str(ips) + '\n\n')
-        s.send(str(_ips) + '\n\n\n')
+        with open("/var/unbound/log_module.log", "a") as file:
+            file.write(str(ips) + "\n\n" + str(_ips) + "\n\n\n")
 
 
         isok = False
