@@ -54,14 +54,14 @@ def inform_super(id, qstate, superqstate, qdata): return True
 
 def operate(id, event, qstate, qdata):
     # when a dns query arrive
-    if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS): 
-        rl = qstate.mesh_info.reply_list
+    if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS):
         for network, rules in dns_table.items():
             # check if the domain is in the table (rules)
             if qstate.qinfo.qname_str in rules.keys():
                 #create instance of DNS message (packet) with given parameters
                 msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
-                if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY): 
+                if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):  
+                    rl = qstate.mesh_info.reply_list
                     while (rl):
                         if rl.query_reply:
                             q = rl.query_reply
