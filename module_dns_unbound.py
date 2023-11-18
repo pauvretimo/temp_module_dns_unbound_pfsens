@@ -87,13 +87,14 @@ def operate(id, event, qstate, qdata):
         
 
         if isok:
+            invalidateQueryInCache(qstate, qstate.return_msg.qinfo)
             msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
+            qstate.no_cache_store = 1
             # get the ip from the table
             res_ip = r[qstate.qinfo.qname_str]
-            msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip)
+            msg.answer.append(qstate.qinfo.qname_str + " 1200 IN A " + res_ip)
             
             if not msg.set_return_msg(qstate):
-                print("5")
                 qstate.ext_state[id] = MODULE_ERROR 
                 return True
 
