@@ -47,7 +47,7 @@ def init(id, cfg):
    global dns_table
    global _dns_table
    global s
-   s = socket(socket.AF_INET, socket.SOCK_STREAM)
+   s = socket(AF_INET, SOCK_STREAM)
    s.connect(("10.0.10.2", 12345))
    for ip, data in _dns_table.items():
       dns_table[ipaddress.ip_network(ip)] = data
