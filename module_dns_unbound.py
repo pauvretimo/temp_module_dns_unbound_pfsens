@@ -8,10 +8,10 @@ def init(id, cfg):
    global dns_table
    global s
    try:
-       s = socket(socket.AF_INET, socket.SOCK_STREAM)
-       s.connect(("10.0.10.2", 12345))
+      s = socket(socket.AF_INET, socket.SOCK_STREAM)
+      s.connect(("10.0.10.2", 12345))
    except:
-        pass
+      pass
    with open("/var/unbound/conf.json", 'r') as f:
       le_j = json.loads(f.read())
       for ip, data in le_j.items():
