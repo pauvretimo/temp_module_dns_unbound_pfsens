@@ -69,11 +69,10 @@ def operate(id, event, qstate, qdata):
                 ips.append(ipaddress.ip_address(q.addr))
                 _ips.append(q.addr)
             rl = rl.next
-        with open("/var/unbound/log_module.log", "a") as file:
-            file.write(str(ips) + "\n\n" + str(_ips) + "\n\n\n")
+        print(ips)
+        print(_ips)
 
-
-        isok = False
+        isok = 0
         r = None
         for network, rules in dns_table.items():
             # check if the domain is in the table (rules)
@@ -83,8 +82,12 @@ def operate(id, event, qstate, qdata):
                     for addr in ips:
                         if addr in network:
                             r = rules
-                            isok = True
+                            isok = 1
                             break
+                    else:
+                        continue
+                    break
+        
 
         if isok:
             msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
