@@ -49,8 +49,7 @@ def init(id, cfg):
       dns_table[ipaddress.ip_network(ip)] = data
    return True
 
-def deinit(id): 
-    s.close()
+def deinit(id):
     return True
 
 def inform_super(id, qstate, superqstate, qdata): return True
@@ -69,8 +68,6 @@ def operate(id, event, qstate, qdata):
                 ips.append(ipaddress.ip_address(q.addr))
                 _ips.append(q.addr)
             rl = rl.next
-        print(ips)
-        print(_ips)
 
         isok = 0
         r = None
