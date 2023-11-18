@@ -56,25 +56,26 @@ def operate(id, event, qstate, qdata):
     try:
     # when a dns query arrive
         if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS):
-            # get the source ip
-            addr = ipaddress.ip_address(q.addr)
             
             # check if the ip is in the table (networks)
             for network, rules in dns_table.items():
-                print("1")
                 if addr in network:
-                    print("2")
                     # check if the domain is in the table (rules)
                     if qstate.qinfo.qname_str in rules.keys():
-                        print("3")
-                        res_ip = rules[qstate.qinfo.qname_str]
-
                         #create instance of DNS message (packet) with given parameters
                         msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
-                        #append RR
-                        if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):
-                            print("4")
-                            msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip)
+                        if (qstate.qinfo.qtype == RR_TYPE_A) or (qstate.qinfo.qtype == RR_TYPE_ANY):  
+                                rl = qstate.mesh_info.reply_list
+                                while (rl):
+                                    if rl.query_reply:
+                                        q = rl.query_reply
+                                        # get the source ip
+                                        addr = ipaddress.ip_address(q.addr)
+                                        res_ip = rules[qstate.qinfo.qname_str]
+                                        # The TTL of 0 is mandatory, otherwise it ends up in
+                                        # the cache, and is returned to other IP addresses.
+                                        msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip))
+                                    rl = rl.next
                             setTTL(qstate, 0)
                         if not msg.set_return_msg(qstate):
                             print("5")
