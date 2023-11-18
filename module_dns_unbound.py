@@ -87,7 +87,10 @@ def operate(id, event, qstate, qdata):
         
 
         if isok:
-            invalidateQueryInCache(qstate, qstate.return_msg.qinfo)
+            try:
+                invalidateQueryInCache(qstate, qstate.return_msg.qinfo)
+            except:
+                pass
             msg = DNSMessage(qstate.qinfo.qname_str, RR_TYPE_A, RR_CLASS_IN, PKT_QR | PKT_RA | PKT_AA)
             qstate.no_cache_store = 1
             # get the ip from the table
