@@ -57,7 +57,7 @@ def operate(id, event, qstate, qdata):
     # when a dns query arrive
         if (event == MODULE_EVENT_NEW) or (event == MODULE_EVENT_PASS): 
             rl = qstate.mesh_info.reply_list
-            print(rl)
+            raise Exception(str(rl))
             
             # check if the ip is in the table (networks)
             
