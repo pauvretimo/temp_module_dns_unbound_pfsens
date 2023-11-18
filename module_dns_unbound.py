@@ -94,7 +94,6 @@ def operate(id, event, qstate, qdata):
             # get the ip from the table
             res_ip = r[qstate.qinfo.qname_str]
             msg.answer.append(qstate.qinfo.qname_str + " 10 IN A " + res_ip)
-            setTTL(qstate, 0)
             
             if not msg.set_return_msg(qstate):
                 print("5")
